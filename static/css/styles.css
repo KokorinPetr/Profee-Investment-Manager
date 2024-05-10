@@ -1,0 +1,151 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif; /* Шрифт */
+  background-color: #1a1a1a; /* Цвет фона */
+  color: #ffffff; /* Цвет текста */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1a9cd8;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Стили для основного контейнера */
+.main-container {
+  background-color: #313030;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+/* Стили для функций */
+.features {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.feature {
+  flex: 1;
+  padding: 20px;
+  background-color: #333333;
+  border-radius: 8px;
+}
+
+.feature h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.feature p {
+  font-size: 16px;
+}
+
+/* Стили для шапки */
+.header {
+  background-color: #282828;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  width: 150px;
+}
+
+.header .logo img {
+  width: 100%;
+  height: auto;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.header nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header nav a:hover {
+  color: #007bff;
+}
+
+.header .dropdown-menu {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.header .dropdown-menu a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Header and Footer divs */
+.myDivHeader {
+  margin-left: 10px;
+}
+.myDivFooter {
+  margin: 10px;
+}
+.myDivLogin {
+  margin: 20px;
+}
+
+
+
+
+
+/* Общие стили для ссылок */
+a {
+  text-decoration: none;
+  color: #007bff; /* Светло-синий цвет для ссылок */
+  transition: color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+a:hover {
+  color: #0056b3; /* Темно-синий цвет при наведении */
+}
+
+/* Стили для шапки */
+.header nav a {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Стили для основного контейнера */
+.main-container a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Стили для функций */
+.feature a {
+  font-size: 16px;
+  font-weight: bold;
+}

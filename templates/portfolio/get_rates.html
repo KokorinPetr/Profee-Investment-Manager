@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block main %}
+    <diV class="myDivFooter">
+        <h2>Get Currency Rates</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+        {% if in_base_flag %}
+            <p>Currency: {{ currency_name }}</p>
+            <p>Exchange rate: {{ exchange_rate }}</p>
+            <p>You can sell for: {{ sell_price|floatformat:2 }} USD</p>
+        {% elif error_message %}
+            <p>{{ error_message }}</p>
+        {% endif %}
+    </diV>
+{% endblock %}

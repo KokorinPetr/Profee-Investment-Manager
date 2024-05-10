@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block main %}
+<h1>Welcome back, {{ user.get_full_name }}</h1>
+<h2>All your stocks in one place</h2>
+<select id="portfolio-select">
+    {% for portfolio in portfolios %}
+    <option value="{{ portfolio.id }}" {% if portfolio.id == selected_portfolio.id %}selected{% endif %}>
+        {{ portfolio.name }}
+    </option>
+    {% endfor %}
+</select>
+
+<div id="stocks-list">
+    {% if selected_portfolio %}
+        <h3>Portfolio: {{ selected_portfolio.name }}</h3>
+        <ol>
+        {% for stock in selected_portfolio.stock_set.all %}
+            <li>{{ stock.name }} - {{ stock.purchase_price }} - Quantity: {{ stock.quantity }}</li>
+            <form action="{% url 'portfolio:delete_stock' stock.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        {% endfor %}
+        </ol>
+        <h3><a href="{% url 'portfolio:add_stock' %}">Add new stock</a></h3>
+        <p><a href="{% url 'portfolio:portfolio_report' selected_portfolio.id %}">Get portfolio report</a></p>
+        <p><a href="{% url 'portfolio:email_portfolio_report' selected_portfolio.id %}">Get portfolio report on email</a></p>
+    {% else %}
+        <p>No portfolio selected or available</p>
+    {% endif %}
+
+    
+</div>
+
+<script>
+document.getElementById('portfolio-select').addEventListener('change', function() {
+    var selectedPortfolioId = this.value;
+    window.location.href = '?portfolio_id=' + selectedPortfolioId;
+});
+</script>
+{% endblock %}
